@@ -65,7 +65,6 @@ class StatusTableViewCell: UITableViewCell {
         }
     }
     
-    
     // 自定义一个类需要重写的init方法是 designated
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -76,10 +75,10 @@ class StatusTableViewCell: UITableViewCell {
     func setupUI()
     {
         // 1.添加子控件
-        contentView.addSubview(topView)
-        contentView.addSubview(contentLabel)
-        contentView.addSubview(pictureView)
-        contentView.addSubview(footerView)
+        contentView.addSubview(topView) //头部
+        contentView.addSubview(contentLabel) //内容
+        contentView.addSubview(pictureView) //图片
+        contentView.addSubview(footerView) //底部工具栏
         
         let width = UIScreen.mainScreen().bounds.width
         // 2.布局子控件
@@ -110,7 +109,7 @@ class StatusTableViewCell: UITableViewCell {
     /// 顶部视图
     private lazy var topView: StatusTableViewTopView = StatusTableViewTopView()
     
-    /// 正文
+    /// 正文（采用懒加载机制）
     lazy var contentLabel: KILabel =
     {
 //        let label = UILabel.createLabel(UIColor.darkGrayColor(), fontSize: 15)

@@ -11,7 +11,7 @@ import UIKit
 class SQLiteManager: NSObject {
     
     private static let manager: SQLiteManager = SQLiteManager()
-    /// 单粒
+    /// 单例
     class func shareManager() -> SQLiteManager {
         return manager
     }
